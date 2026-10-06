@@ -1,0 +1,160 @@
+:root {
+  --page-bg: #E3E6E1;
+  --grid-line: rgba(76, 99, 80, 0.07);
+  --shell: #24262B;
+  --shell-edge: #1A1C20;
+  --screen-bg: #CFE3CE;
+  --screen-text: #1B2E20;
+  --screen-sub: #4C6350;
+  --num-bg: #2F323A;
+  --num-bg-hover: #383B45;
+  --num-text: #EDEBE4;
+  --fn-bg: #3B3E47;
+  --fn-bg-hover: #454852;
+  --fn-text: #C9CCC2;
+  --op-bg: #D98E2B;
+  --op-bg-hover: #E39A3C;
+  --op-text: #24262B;
+  --eq-bg: #1F7A6C;
+  --eq-bg-hover: #26937F;
+  --eq-text: #EAF4F1;
+  --font-ui: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    linear-gradient(var(--grid-line) 1px, transparent 1px) 0 0 / 28px 28px,
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px) 0 0 / 28px 28px,
+    var(--page-bg);
+  font-family: var(--font-ui);
+  padding: 24px;
+}
+
+.calculator {
+  width: 320px;
+  max-width: 100%;
+  background: var(--shell);
+  border-radius: 28px;
+  padding: 20px;
+  border: 1px solid var(--shell-edge);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.04) inset,
+    0 24px 48px -16px rgba(20, 22, 24, 0.55);
+}
+
+.screen {
+  background: var(--screen-bg);
+  border-radius: 16px;
+  padding: 22px 20px 18px;
+  margin-bottom: 18px;
+  text-align: right;
+  overflow: hidden;
+}
+
+.screen-expression {
+  font-family: var(--font-mono);
+  font-size: 15px;
+  color: var(--screen-sub);
+  min-height: 20px;
+  white-space: nowrap;
+  overflow-x: auto;
+}
+
+.screen-current {
+  font-family: var(--font-mono);
+  font-size: 40px;
+  font-weight: 500;
+  color: var(--screen-text);
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow-x: auto;
+}
+
+.keys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.key {
+  border: none;
+  border-radius: 14px;
+  font-family: var(--font-ui);
+  font-size: 19px;
+  font-weight: 500;
+  padding: 18px 0;
+  cursor: pointer;
+  transition: transform 0.08s ease, background 0.15s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.key:active {
+  transform: scale(0.94);
+}
+
+.key--num {
+  background: var(--num-bg);
+  color: var(--num-text);
+}
+.key--num:hover {
+  background: var(--num-bg-hover);
+}
+
+.key--fn {
+  background: var(--fn-bg);
+  color: var(--fn-text);
+  font-size: 16px;
+}
+.key--fn:hover {
+  background: var(--fn-bg-hover);
+}
+
+.key--op {
+  background: var(--op-bg);
+  color: var(--op-text);
+}
+.key--op:hover {
+  background: var(--op-bg-hover);
+}
+
+.key--eq {
+  background: var(--eq-bg);
+  color: var(--eq-text);
+}
+.key--eq:hover {
+  background: var(--eq-bg-hover);
+}
+
+.key:focus-visible {
+  outline: 2px solid var(--eq-bg-hover);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .key {
+    transition: none;
+  }
+  .key:active {
+    transform: none;
+  }
+}
+
+@media (max-width: 360px) {
+  .screen-current {
+    font-size: 32px;
+  }
+  .key {
+    font-size: 17px;
+    padding: 16px 0;
+  }
+}

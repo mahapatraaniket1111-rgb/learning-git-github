@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="calculator" aria-label="Calculator">
+    <div class="screen">
+      <div class="screen-expression" id="expression" aria-hidden="true"></div>
+      <div class="screen-current" id="current">0</div>
+    </div>
+    <div class="keys">
+      <button class="key key--fn" data-action="clear">AC</button>
+      <button class="key key--fn" data-action="delete" aria-label="Delete">⌫</button>
+      <button class="key key--fn" data-action="percent">%</button>
+      <button class="key key--op" data-action="divide" aria-label="Divide">÷</button>
+
+      <button class="key key--num" data-number="7">7</button>
+      <button class="key key--num" data-number="8">8</button>
+      <button class="key key--num" data-number="9">9</button>
+      <button class="key key--op" data-action="multiply" aria-label="Multiply">×</button>
+
+      <button class="key key--num" data-number="4">4</button>
+      <button class="key key--num" data-number="5">5</button>
+      <button class="key key--num" data-number="6">6</button>
+      <button class="key key--op" data-action="subtract" aria-label="Subtract">−</button>
+
+      <button class="key key--num" data-number="1">1</button>
+      <button class="key key--num" data-number="2">2</button>
+      <button class="key key--num" data-number="3">3</button>
+      <button class="key key--op" data-action="add" aria-label="Add">+</button>
+
+      <button class="key key--fn" data-action="sign" aria-label="Toggle sign">±</button>
+      <button class="key key--num" data-number="0">0</button>
+      <button class="key key--num" data-number=".">.</button>
+      <button class="key key--eq" data-action="equals" aria-label="Equals">=</button>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
